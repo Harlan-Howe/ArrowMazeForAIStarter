@@ -33,9 +33,7 @@ public class ArrowMazePanel extends JPanel
      */
     public void paintComponent(Graphics g)
     {
-        for (int r=0; r<NUM_ROWS; r++)
-            for (int c=0; c<NUM_COLS; c++)
-                myGrid[r][c].drawSelf(g);
+        // TODO #0: you write this!
     }
 
     /**
@@ -77,7 +75,8 @@ public class ArrowMazePanel extends JPanel
      * a) goes out of bounds
      * b) points to a member of its own path
      * c) points to another, non-black cell
-     * In the case of (a) or (b) pick a random color for all the cells in this path
+     * In the case of (a) or (b) pick a random color for all the cells in this path. The color should have good contrast
+     * with the starting black color and the white arrows.
      * In the case of (c), set all the cells in the path to the color to which we just ran into
      * @param row - row of start cell
      * @param col - col of start cell
@@ -86,11 +85,29 @@ public class ArrowMazePanel extends JPanel
     {
         // TODO #4: you write this!
     }
+    /**
+     * Color a single path, starting at a random location. This might go out of bounds, end at it own termination,
+     * or enter another, existing point. This will not necessarily find all the cells that might lead to a given
+     * termination.
+     * (Called in response to the "find 1 path" button press by user.)
+     */
+    public void find1Path() {
+        // TODO #5: you write this!
+    }
 
+    /**
+     * identify the fraction of cells in myGrid that are not black.
+     * @return - the fraction of non-black cells in myGrid.
+     */
+    public double getPercentageNonBlack()
+    {
+        // TODO #6: you write this!
+        return 0.0;// replace this.
+    }
     /**
      * trace paths until all ArrowCells are colored other than black.
      */
-    public void execute()
+    public void findAllPaths()
     {
         for (int cellNum = 0; cellNum<NUM_ROWS*NUM_COLS; cellNum++)
         {
